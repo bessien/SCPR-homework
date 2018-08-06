@@ -3,15 +3,20 @@
 <head>
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- needed for use of angular -->
+	<link rel="stylesheet" type="text/css" href="search.css">
 	<script src="app.js"></script>
 </head>
 <body>
 	<div ng-app="searchApp" ng-controller="searchCtrl">
+	<p>Search Term</p>
+	<input type="text" ng-model="searchTerm">
+	<button ng-click="search(searchTerm)">SEARCH</button>
 		<ul>
 		  <li ng-repeat="article in results"> <!-- loop throug json array -->
 		    {{ article.title + ', ' + article.audio }} <!-- display only article title and audio file from results -->
 		  </li>
 		</ul>
+		<button ng-show="results" ng-click="reset()">Clear Search</button>
 	</div>	
 </body>
 </html>
