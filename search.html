@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> <!-- needed for use of angular -->
+	<script src="app.js"></script>
+</head>
+<body>
+	<div ng-app="searchApp" ng-controller="searchCtrl">
+		<ul>
+		  <li ng-repeat="article in results"> <!-- loop throug json array -->
+		    {{ article.title + ', ' + article.audio }} <!-- display only article title and audio file from results -->
+		  </li>
+		</ul>
+	</div>	
+</body>
+</html>
